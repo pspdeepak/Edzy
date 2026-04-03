@@ -1,102 +1,1521 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register for Live Class</title>
-    <style>
-        :root { --primary: #25D366; --dark: #128C7E; --bg: #f4f7f6; }
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: var(--bg); 
-            display: flex; justify-content: center; align-items: center; 
-            height: 100vh; margin: 0; 
-        }
-        .card { 
-            background: white; padding: 2rem; border-radius: 15px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
-            width: 90%; max-width: 400px; text-align: center; 
-        }
-        h1 { color: #333; margin-bottom: 0.5rem; font-size: 1.5rem; }
-        p { color: #666; margin-bottom: 1.5rem; font-size: 0.9rem; }
-        .form-group { text-align: left; margin-bottom: 1rem; }
-        label { display: block; margin-bottom: 5px; font-weight: 600; color: #444; }
-        input { 
-            width: 100%; padding: 12px; border: 1px solid #ddd; 
-            border-radius: 8px; box-sizing: border-box; font-size: 1rem; 
-        }
-        button { 
-            width: 100%; padding: 12px; background-color: var(--primary); 
-            color: white; border: none; border-radius: 8px; 
-            font-size: 1rem; font-weight: bold; cursor: pointer; 
-            transition: background 0.3s; margin-top: 10px; 
-        }
-        button:hover { background-color: var(--dark); }
-        .footer-note { font-size: 0.8rem; color: #888; margin-top: 15px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDZY. | Study daily. Without pressure.</title>
+  <meta
+    name="description"
+    content="EDZY. helps Class 6–10 CBSE & ICSE students build a daily study routine without pressure. Join the free 7-day study challenge."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --bg-soft: #eef4ff;
+      --surface: #ffffff;
+      --surface-2: #f8fbff;
+      --surface-dark: #0b1220;
+      --surface-dark-2: #111a2e;
+      --surface-dark-3: #16213b;
+      --text: #0f172a;
+      --text-soft: #475569;
+      --text-inverse: #f8fafc;
+      --muted-inverse: #94a3b8;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-soft: rgba(37, 99, 235, 0.14);
+      --green: #22c55e;
+      --green-soft: rgba(34, 197, 94, 0.14);
+      --border: #e2e8f0;
+      --border-dark: rgba(148, 163, 184, 0.16);
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 26px 70px rgba(2, 6, 23, 0.22);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background:
+        linear-gradient(180deg, #0b1220 0px, #0b1220 760px, #f8fafc 760px, #f8fafc 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 86px 0;
+    }
+
+    .section-title {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -1.2px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      max-width: 780px;
+      margin: 0 auto 42px;
+      text-align: center;
+      color: var(--text-soft);
+      font-size: 1.04rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.88rem;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+    }
+
+    .eyebrow-light {
+      background: #eef4ff;
+      color: var(--primary);
+      border: 1px solid #dbeafe;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.5);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 18, 32, 0.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      font-family: "Poppins", sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 1px;
+      color: var(--text-inverse);
+    }
+
+    .logo .dot {
+      color: var(--green);
+      display: inline-block;
+      text-shadow: 0 0 14px rgba(34, 197, 94, 0.55);
+      animation: blinkCursor 1s steps(1, end) infinite;
+    }
+
+    @keyframes blinkCursor {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0.2; }
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted-inverse);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-inverse);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 0 0 18px;
+    }
+
+    .mobile-menu-inner {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 14px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .mobile-menu a {
+      color: #e2e8f0;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .mobile-menu a:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 24px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #3b82f6);
+      color: white;
+      box-shadow: 0 12px 26px rgba(37, 99, 235, 0.34);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(37, 99, 235, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .btn-light {
+      background: white;
+      color: var(--primary);
+      border: 1px solid #dbeafe;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-light:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 98px 0 86px;
+      color: var(--text-inverse);
+      background:
+        radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.26), transparent 25%),
+        radial-gradient(circle at 88% 12%, rgba(34, 197, 94, 0.12), transparent 18%),
+        radial-gradient(circle at 70% 54%, rgba(59, 130, 246, 0.18), transparent 22%),
+        linear-gradient(180deg, #0b1220 0%, #111a2e 100%);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(24px);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 360px;
+      height: 360px;
+      background: rgba(37, 99, 235, 0.2);
+      right: -80px;
+      top: -80px;
+    }
+
+    .hero::after {
+      width: 300px;
+      height: 300px;
+      background: rgba(34, 197, 94, 0.08);
+      left: -90px;
+      bottom: -80px;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.03fr 0.97fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(2.9rem, 6vw, 5.1rem);
+      line-height: 0.98;
+      letter-spacing: -2.2px;
+      font-weight: 800;
+      max-width: 760px;
+      margin: 18px 0 20px;
+    }
+
+    .hero-content p {
+      max-width: 650px;
+      color: var(--muted-inverse);
+      font-size: 1.08rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .trust-badge {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #dbeafe;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .form-card {
+      position: relative;
+      background: rgba(255,255,255,0.98);
+      color: var(--text);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.5);
+      overflow: hidden;
+    }
+
+    .form-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), #60a5fa, var(--green));
+    }
+
+    .form-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
+    .form-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .form-card h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.8rem;
+      line-height: 1.08;
+      letter-spacing: -0.8px;
+      margin-bottom: 10px;
+    }
+
+    .form-card p {
+      color: var(--text-soft);
+      font-size: 0.96rem;
+      margin-bottom: 18px;
+    }
+
+    .lead-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field-group label {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .input,
+    .select {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 15px;
+      padding: 14px 15px;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .input:focus,
+    .select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(37,99,235,0.12);
+      transform: translateY(-1px);
+    }
+
+    .phone-row {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 10px;
+    }
+
+    .form-note {
+      color: var(--text-soft);
+      font-size: 0.83rem;
+    }
+
+    .form-message {
+      min-height: 22px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .form-message.success {
+      color: #15803d;
+    }
+
+    .form-message.error {
+      color: #b91c1c;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mini-stat {
+      background: #f8fbff;
+      border: 1px solid #e5eefc;
+      border-radius: 16px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .mini-stat strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .mini-stat span {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .stats-strip {
+      margin-top: -24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stats-strip-inner {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .stat-item strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .stat-item span {
+      color: var(--text-soft);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      background: white;
+      border: 1px solid #e9eef7;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.09);
+    }
+
+    .icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      background: #eff6ff;
+      color: var(--primary);
+    }
+
+    .icon-wrap.green {
+      background: #ecfdf3;
+      color: #16a34a;
+    }
+
+    .card h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.15;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .card p,
+    .card li {
+      color: var(--text-soft);
+    }
+
+    .steps .card {
+      position: relative;
+      padding-top: 78px;
+    }
+
+    .step-number {
+      position: absolute;
+      top: 24px;
+      left: 26px;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), #3b82f6);
+      color: white;
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.25);
+    }
+
+    .feature-band {
+      background:
+        linear-gradient(180deg, #f4f8ff 0%, #ffffff 100%);
+    }
+
+    .split-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .panel-dark {
+      background: linear-gradient(180deg, #10192e 0%, #17233d 100%);
+      color: white;
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel-dark::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.16);
+      right: -70px;
+      top: -70px;
+      filter: blur(18px);
+    }
+
+    .panel-dark h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.9rem;
+      line-height: 1.1;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .panel-dark p,
+    .panel-dark li {
+      color: #cbd5e1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tick-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .tick-list li::before {
+      content: "✔";
+      color: var(--green);
+      margin-right: 10px;
+      font-weight: 800;
+    }
+
+    .mock-card {
+      background: white;
+      border-radius: 28px;
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .mock-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .mock-top strong {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.1rem;
+    }
+
+    .mock-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .mock-badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .chat-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .chat-item {
+      border-radius: 18px;
+      padding: 14px 16px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .chat-item.user {
+      background: #eff6ff;
+      color: var(--text);
+      margin-right: 32px;
+    }
+
+    .chat-item.bot {
+      background: #ecfdf3;
+      color: var(--text);
+      margin-left: 32px;
+    }
+
+    .testimonial-card {
+      background: white;
+      border: 1px solid #e8eef8;
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .stars {
+      color: #f59e0b;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .testimonial-card p {
+      color: var(--text-soft);
+      margin-bottom: 16px;
+    }
+
+    .testimonial-card strong {
+      display: block;
+      color: var(--text);
+      font-family: "Manrope", sans-serif;
+      font-size: 1rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      gap: 14px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: white;
+      border: 1px solid #e8eef8;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: white;
+      border: none;
+      text-align: left;
+      padding: 20px 22px;
+      font: inherit;
+      font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .faq-question span:last-child {
+      color: var(--primary);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 22px 20px;
+      color: var(--text-soft);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .faq-question span:last-child {
+      transform: rotate(45deg);
+    }
+
+    .cta-section {
+      padding-top: 30px;
+    }
+
+    .cta-box {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.08), transparent 20%),
+        linear-gradient(135deg, #1d4ed8 0%, #2563eb 55%, #3b82f6 100%);
+      color: white;
+      border-radius: 32px;
+      padding: 56px 30px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      right: -80px;
+      top: -80px;
+      filter: blur(8px);
+    }
+
+    .cta-box h2 {
+      position: relative;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.06;
+      letter-spacing: -1.2px;
+      margin-bottom: 14px;
+      z-index: 1;
+    }
+
+    .cta-box p {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto 24px;
+      color: rgba(255,255,255,0.9);
+      z-index: 1;
+    }
+
+    footer {
+      margin-top: 28px;
+      background: #0b1220;
+      border-top: 1px solid rgba(148,163,184,0.08);
+      padding: 34px 0 40px;
+      color: white;
+    }
+
+    .footer-brand {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand .logo {
+      font-size: 1.65rem;
+    }
+
+    .footer-tagline {
+      text-align: center;
+      color: #cbd5e1;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .footer-copy {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.88rem;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 1050px) {
+      .hero-grid,
+      .split-panel,
+      .grid-4 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stats-strip-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 860px) {
+      body {
+        background:
+          linear-gradient(180deg, #0b1220 0px, #0b1220 980px, #f8fafc 980px, #f8fafc 100%);
+      }
+
+      .nav-links,
+      .nav-actions .btn-primary {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .mobile-menu.open {
+        display: block;
+      }
+
+      .hero-grid,
+      .split-panel,
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .stats-strip-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 78px;
+      }
+
+      .hero-content h1 {
+        font-size: 3.1rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .logo {
+        font-size: 1.72rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2.65rem;
+      }
+
+      .hero-content p,
+      .section-subtitle {
+        font-size: 0.98rem;
+      }
+
+      .phone-row {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .form-card,
+      .panel-dark,
+      .mock-card,
+      .cta-box,
+      .card,
+      .testimonial-card {
+        padding: 22px;
+      }
+
+      .stats-strip-inner {
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="card">
-    <!-- page headding and logo -->
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">EDZY<span class="dot">.</span></a>
 
-<!-- delete if section related to logo if it doesnt work -->
-<div class="card">
-    <!-- START MINIMALIST HEADER -->
-    <div style="text-align: center; margin-bottom: 30px;">
-        <h1 style="font-family: Arial, sans-serif; font-weight: 800; font-size: 3rem; color: #1a1a1a; margin: 0; letter-spacing: -2px;">
-            EDZY<span style="color: #25D366;">.</span>
-        </h1>
-        <p style="font-family: Arial, sans-serif; font-weight: 300; font-size: 0.8rem; color: #888; margin: 0; letter-spacing: 3px; text-transform: lowercase; margin-top: -5px;">
-            education made easy
-        </p>
+      <nav class="nav-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Why EDZY.</a>
+        <a href="#parents">For parents</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#join-form" class="btn btn-primary">Join Free</a>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+      </div>
     </div>
-    <!-- END MINIMALIST HEADER -->
-    
-    <p style="color: #444; margin-bottom: 20px;">🚀 Register below for the Live Class link</p>
-    
-    <form id="registrationForm">
-    
-<!-- delete if section related to logo if it doesnt work and replace with below lines
-        
-        <h1>🚀 Join the Live Class</h1>
 
-    <p>Register below to receive the YouTube Live link and reminders via WhatsApp.</p>
+    <div class="container mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-inner">
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Why EDZY.</a>
+        <a href="#parents">For parents</a>
+        <a href="#faq">FAQ</a>
+        <a href="#join-form">Join Free</a>
+      </div>
+    </div>
+  </header>
 
-        -->
-    
-    <form id="registrationForm">
-        <div class="form-group">
-            <label for="username">Full Name</label>
-            <input type="text" id="username" placeholder="Enter your name" required>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Daily study routine for Class 6–10
         </div>
-        <div class="form-group">
-            <label for="phone">WhatsApp Number</label>
-            <input type="tel" id="phone" placeholder="e.g. +91 9876543210" required>
+
+        <h1>Study daily.<br>Without pressure.</h1>
+
+        <p>
+          EDZY. helps Class 6–10 CBSE & ICSE students build a consistent study routine
+          through simple structure, reminders, and habit-first learning.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#join-form" class="btn btn-primary">Start Free Challenge</a>
+          <a href="#how-it-works" class="btn btn-secondary">See how it works</a>
         </div>
-        <button type="submit">Get Access via WhatsApp</button>
-    </form>
 
-    <p class="footer-note">Registration is free. link will be sent to WhatsApp.</p>
-</div>
+        <div class="trust-row">
+          <span class="trust-badge">CBSE & ICSE</span>
+          <span class="trust-badge">No app needed</span>
+          <span class="trust-badge">7-day free challenge</span>
+        </div>
+      </div>
 
-<script>
-    document.getElementById('registrationForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('username').value;
-        
-        // IMPORTANT: Replace with your actual WhatsApp number (including country code, no '+')
-        const myNumber = "917204878542"; 
-        
-        // Create the pre-filled message
-        const message = `Hi! My name is ${name}. I just registered for your class. Please send me the link!`;
-        
-        // Redirect to WhatsApp
-        const whatsappUrl = `https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`;
-        window.location.href = whatsappUrl;
+      <div class="hero-visual">
+        <div class="form-card" id="join-form">
+          <div class="form-top">
+            <span class="form-pill">⚡ Free registration</span>
+            <span class="form-pill">📲 WhatsApp-first</span>
+          </div>
+
+          <h3>Join the FREE 7-Day Study Challenge</h3>
+          <p>Enter your details to get started in seconds.</p>
+
+          <form class="lead-form" id="leadForm">
+            <div class="field-group">
+              <label for="studentName">Name</label>
+              <input
+                id="studentName"
+                name="studentName"
+                type="text"
+                class="input"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="countryCode">Phone Number</label>
+              <div class="phone-row">
+                <select id="countryCode" name="countryCode" class="select" required>
+                  <option value="+91" data-country="IN">🇮🇳 +91</option>
+                  <option value="+61" data-country="AU">🇦🇺 +61</option>
+                  <option value="+1" data-country="US">🇺🇸 +1</option>
+                  <option value="+44" data-country="GB">🇬🇧 +44</option>
+                  <option value="+971" data-country="AE">🇦🇪 +971</option>
+                  <option value="+65" data-country="SG">🇸🇬 +65</option>
+                  <option value="+64" data-country="NZ">🇳🇿 +64</option>
+                  <option value="+60" data-country="MY">🇲🇾 +60</option>
+                  <option value="+966" data-country="SA">🇸🇦 +966</option>
+                  <option value="+974" data-country="QA">🇶🇦 +974</option>
+                  <option value="+968" data-country="OM">🇴🇲 +968</option>
+                  <option value="+973" data-country="BH">🇧🇭 +973</option>
+                  <option value="+880" data-country="BD">🇧🇩 +880</option>
+                  <option value="+977" data-country="NP">🇳🇵 +977</option>
+                  <option value="+94" data-country="LK">🇱🇰 +94</option>
+                  <option value="+92" data-country="PK">🇵🇰 +92</option>
+                  <option value="+81" data-country="JP">🇯🇵 +81</option>
+                  <option value="+49" data-country="DE">🇩🇪 +49</option>
+                  <option value="+33" data-country="FR">🇫🇷 +33</option>
+                  <option value="+39" data-country="IT">🇮🇹 +39</option>
+                </select>
+
+                <input
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  type="tel"
+                  inputmode="numeric"
+                  class="input"
+                  placeholder="Enter phone number"
+                  required
+                />
+              </div>
+              <div class="form-note">Country code will be auto-selected when possible.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Register Free</button>
+            <div id="formMessage" class="form-message"></div>
+          </form>
+
+          <div class="mini-stats">
+            <div class="mini-stat">
+              <strong>7 Days</strong>
+              <span>Free challenge</span>
+            </div>
+            <div class="mini-stat">
+              <strong>6–10</strong>
+              <span>Classes covered</span>
+            </div>
+            <div class="mini-stat">
+              <strong>2 Boards</strong>
+              <span>CBSE & ICSE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-strip-inner">
+        <div class="stat-item">
+          <strong>Daily</strong>
+          <span>Study consistency over cramming</span>
+        </div>
+        <div class="stat-item">
+          <strong>Simple</strong>
+          <span>WhatsApp-first student flow</span>
+        </div>
+        <div class="stat-item">
+          <strong>Focused</strong>
+          <span>Built for Class 6–10 students</span>
+        </div>
+        <div class="stat-item">
+          <strong>Stress-free</strong>
+          <span>Better routines for parents too</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:14px;">
+        <span class="eyebrow eyebrow-light">
+          <span class="eyebrow-dot"></span>
+          Why students stick with EDZY.
+        </span>
+      </div>
+      <h2 class="section-title">A smarter way to build study habits</h2>
+      <p class="section-subtitle">
+        EDZY. is not just another tuition page. It is a habit-first learning system
+        designed to make daily study feel structured, lighter, and easier to repeat.
+      </p>
+
+      <div class="grid-4">
+        <div class="card">
+          <div class="icon-wrap">📚</div>
+          <h3>Routine over randomness</h3>
+          <p>Students stop relying on last-minute panic and start following a repeatable daily plan.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-wrap green">⏰</div>
+          <h3>Daily accountability</h3>
+          <p>Consistent reminders and a clear structure help students actually show up every day.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-wrap">📲</div>
+          <h3>WhatsApp-first flow</h3>
+          <p>No heavy platform learning curve. Everything begins with a familiar, simple experience.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-wrap green">🧠</div>
+          <h3>Less pressure, more progress</h3>
+          <p>Students build confidence through repetition instead of stress and overwhelm.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section feature-band" id="how-it-works">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:14px;">
+        <span class="eyebrow eyebrow-light">
+          <span class="eyebrow-dot"></span>
+          How it works
+        </span>
+      </div>
+      <h2 class="section-title">Three simple steps to get started</h2>
+      <p class="section-subtitle">
+        Everything is designed to be simple, fast, and easy to follow for both students and parents.
+      </p>
+
+      <div class="grid-3 steps">
+        <div class="card">
+          <div class="step-number">1</div>
+          <h3>Register in seconds</h3>
+          <p>Enter your name and phone number to join the free 7-day challenge.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">2</div>
+          <h3>Get your study flow</h3>
+          <p>Receive your reminders, entry steps, and routine structure in a familiar format.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">3</div>
+          <h3>Build consistency daily</h3>
+          <p>Show up regularly, reduce stress, and make study part of your daily rhythm.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-panel">
+      <div class="panel-dark">
+        <span class="eyebrow">Why this works</span>
+        <h3>Students don’t need more pressure. They need a system.</h3>
+        <p>
+          The biggest problem is rarely lack of ability. It is usually lack of structure,
+          consistency, and repeatable habits.
+        </p>
+        <ul class="tick-list">
+          <li>Reduces last-minute study stress</li>
+          <li>Builds a fixed daily study routine</li>
+          <li>Feels simple enough to continue</li>
+          <li>Creates stronger confidence over time</li>
+        </ul>
+      </div>
+
+      <div class="mock-card">
+        <div class="mock-top">
+          <strong>Student flow preview</strong>
+          <span class="form-pill">Live routine</span>
+        </div>
+
+        <div class="mock-badges">
+          <span class="mock-badge">Class 6–10</span>
+          <span class="mock-badge">CBSE</span>
+          <span class="mock-badge">ICSE</span>
+        </div>
+
+        <div class="chat-list">
+          <div class="chat-item user">Hi, I want to join the EDZY. free challenge.</div>
+          <div class="chat-item bot">Welcome to EDZY. You’re in. Let’s build your study routine step by step.</div>
+          <div class="chat-item user">What happens next?</div>
+          <div class="chat-item bot">You’ll receive your daily routine, reminders, and challenge flow to stay consistent.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="parents">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:14px;">
+        <span class="eyebrow eyebrow-light">
+          <span class="eyebrow-dot"></span>
+          For parents
+        </span>
+      </div>
+      <h2 class="section-title">No more forcing your child to study</h2>
+      <p class="section-subtitle">
+        EDZY. helps parents create structure without daily arguments, repeated reminders, or unnecessary stress.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon-wrap">💬</div>
+          <h3>Less conflict at home</h3>
+          <p>Parents no longer need to constantly negotiate study time every evening.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-wrap green">🗓️</div>
+          <h3>More predictable routine</h3>
+          <p>Students know when to start, what to do, and how to stay on track.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-wrap">🌱</div>
+          <h3>Stronger long-term foundation</h3>
+          <p>Better routines now support better academic confidence later.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section feature-band">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:14px;">
+        <span class="eyebrow eyebrow-light">
+          <span class="eyebrow-dot"></span>
+          Testimonials
+        </span>
+      </div>
+      <h2 class="section-title">What parents and students would want to feel</h2>
+      <p class="section-subtitle">
+        Replace these with your real testimonials once you start collecting them.
+      </p>
+
+      <div class="grid-3">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>“First time my child studied daily without me needing to remind them every evening.”</p>
+          <strong>Parent</strong>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>“The routine made it easier. I stopped delaying study and just got started.”</p>
+          <strong>Student</strong>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>“Simple, structured, and much less stressful than trying to manage it alone.”</p>
+          <strong>Parent</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:14px;">
+        <span class="eyebrow eyebrow-light">
+          <span class="eyebrow-dot"></span>
+          FAQ
+        </span>
+      </div>
+      <h2 class="section-title">Frequently asked questions</h2>
+      <p class="section-subtitle">
+        Keep the joining experience simple and easy to understand.
+      </p>
+
+      <div class="faq-grid">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>Who is EDZY. for?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            EDZY. is designed for students in Class 6 to 10 studying under CBSE or ICSE.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do I need to install an app?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            No. The flow is designed to feel simple and familiar, without requiring a heavy app setup.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What happens after registration?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            After submitting the form, the user is redirected to WhatsApp with their details pre-filled for a quick start.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I change the form to save leads somewhere else?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            Yes. This code can later be connected to Google Sheets, EmailJS, Zapier, Formspree, or your own backend.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Your child doesn’t need more tuition. They need consistency.</h2>
+        <p>
+          Start the free 7-day challenge and build a daily study routine that feels simpler,
+          steadier, and easier to continue.
+        </p>
+        <a href="#join-form" class="btn btn-light">Join the Free Challenge</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">
+      <div class="logo">EDZY<span class="dot">.</span></div>
+    </div>
+    <div class="footer-tagline">Built for consistency.</div>
+    <div class="footer-copy">© 2026 EDZY.</div>
+  </footer>
+
+  <script>
+    const countryCodeMap = {
+      IN: "+91",
+      AU: "+61",
+      US: "+1",
+      GB: "+44",
+      AE: "+971",
+      SG: "+65",
+      NZ: "+64",
+      MY: "+60",
+      SA: "+966",
+      QA: "+974",
+      OM: "+968",
+      BH: "+973",
+      BD: "+880",
+      NP: "+977",
+      LK: "+94",
+      PK: "+92",
+      JP: "+81",
+      DE: "+49",
+      FR: "+33",
+      IT: "+39"
+    };
+
+    const form = document.getElementById("leadForm");
+    const countryCodeSelect = document.getElementById("countryCode");
+    const nameInput = document.getElementById("studentName");
+    const phoneInput = document.getElementById("phoneNumber");
+    const formMessage = document.getElementById("formMessage");
+
+    async function detectCountryCode() {
+      try {
+        const response = await fetch("https://ipapi.co/json/");
+        if (!response.ok) throw new Error("Lookup failed");
+        const data = await response.json();
+        const country = data && data.country_code ? data.country_code.toUpperCase() : "IN";
+        countryCodeSelect.value = countryCodeMap[country] || "+91";
+      } catch (error) {
+        countryCodeSelect.value = "+91";
+      }
+    }
+
+    detectCountryCode();
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = nameInput.value.trim();
+      const code = countryCodeSelect.value.trim();
+      const phone = phoneInput.value.replace(/[^0-9]/g, "").trim();
+
+      if (!name || !phone) {
+        formMessage.textContent = "Please enter both name and phone number.";
+        formMessage.className = "form-message error";
+        return;
+      }
+
+      if (phone.length < 6) {
+        formMessage.textContent = "Please enter a valid phone number.";
+        formMessage.className = "form-message error";
+        return;
+      }
+
+      formMessage.textContent = "Redirecting to WhatsApp...";
+      formMessage.className = "form-message success";
+
+      const fullPhone = `${code} ${phone}`;
+      const message =
+        `Hi EDZY.%0A` +
+        `I want to join the FREE 7-Day Study Challenge.%0A%0A` +
+        `Name: ${encodeURIComponent(name)}%0A` +
+        `Phone: ${encodeURIComponent(fullPhone)}%0A` +
+        `Class: 6-10%0A` +
+        `Board: CBSE / ICSE`;
+
+      const whatsappNumber = "919876543210";
+
+      setTimeout(() => {
+        window.location.href = `https://wa.me/${whatsappNumber}?text=${message}`;
+      }, 500);
     });
-</script>
 
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach((item) => {
+      const button = item.querySelector(".faq-question");
+      button.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".mobile-menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+      });
+    });
+  </script>
 </body>
 </html>
