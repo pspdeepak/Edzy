@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | Edzy.one</title>
+    <style>
+        /* Professional Reset & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Using a deep navy gradient for a premium look */
+            background: radial-gradient(circle at center, #1a2634 0%, #0b111a 100%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #ffffff;
+            overflow: hidden;
+            text-align: center; /* Center-aligns all text globally */
+        }
+
+        /* Logo Branding */
+        .brand-logo {
+            display: flex;
+            justify-content: center; /* Centers the logo flex container */
+            align-items: baseline;
+            font-family: 'Arial Black', sans-serif;
+            font-size: clamp(3rem, 10vw, 5.5rem); 
+            font-weight: 900;
+            letter-spacing: -3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .dot-blink {
+            height: 22px;
+            width: 22px;
+            background-color: #1ed760;
+            border-radius: 50%;
+            margin-left: 8px;
+            box-shadow: 0 0 15px rgba(30, 215, 96, 0.4);
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .4; transform: scale(0.9); }
+        }
+
+        /* Content Section */
+        .content {
+            padding: 0 20px;
+            max-width: 800px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: rgba(30, 215, 96, 0.1);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(30, 215, 96, 0.3);
+            color: #1ed760;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+            color: #f1f5f9;
+        }
+
+        p.sub-text {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* Footer & Copyright */
+        footer {
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #1ed760;
+        }
+
+        .divider {
+            height: 1px;
+            width: 50px;
+            background: #334155;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <div class="status-badge">Upgrading Your Experience</div>
+        
+        <div class="brand-logo">
+            EDZY<span class="dot-blink"></span> ONE
+        </div>
+
+        <h1>India’s Number 1 Online Learning Portal</h1>
+        <p class="sub-text">We are enhancing our platform to serve you better.<br>We'll be back online and ready for class very soon.</p>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Support</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div class="divider"></div>
+        <p>&copy; 2026 Edzy.one. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
